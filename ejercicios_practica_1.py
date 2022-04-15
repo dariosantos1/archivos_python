@@ -10,6 +10,7 @@
 # Ejercicios con diccionarios
 
 import csv
+from operator import truediv
 
 
 def ej1():
@@ -18,20 +19,24 @@ def ej1():
     # el diccionario vacio debe llamarse "stock"
     
     # stock = ....
-
+    stock = {}
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
     # tuercas = 150
     # arandelas = 300
-
     # Los nombres tornillos, tuercas y arandelas
     # son las claves (keys) del diccionario
     # mientras que las cantidades son los valores (values)
+    stock ["tornillos"] = 100
+    stock ["tuercas"] = 150
+    stock ["arandelas"] = 300
 
     # Una vez armado el diccionario imprimirlo en pantalla con print
+    
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    print ("El Stock de la ferreteria es :",stock)
 
 
 def ej2():
@@ -40,12 +45,16 @@ def ej2():
     # como una base de datos. Comenzaremos con un diccionario de stock
     # de nuestros productos en cero:
     
-    strock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
+    stock = {'tornillos': 0, 'tuercas': 0, 'arandelas': 0}
 
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
     # while True.....
     
+    
+        
+            
+
     # Paso 2:
     # Dentro de ese bucle consultar al usuario por consola
     # que producto desea agregar al stock
@@ -66,6 +75,34 @@ def ej2():
     # imprimir en pantalla con print el diccionario con el stock final
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+
+    while True:
+        
+        print ("El stock actual es :" , stock)
+        agregar = str(input("Escriba el producto que desea stockear o la palabra fin para finalizar la carga\n"))
+        if agregar == "tornillos" :
+            print ("ingresar la cantidad de tornillos")
+            try :
+                stock ["tornillos"] = int(input())
+            except : 
+                print ("Error al ingresar el stock")
+        elif agregar == "tuercas" :
+            print ("ingresar la cantidad de tuercas")
+            try :
+                stock ["tuercas"] = int(input())
+            except : 
+                print ("Error al ingresar el stock")
+        elif agregar == "arandelas" :
+            print ("ingresar la cantidad de arandelas")
+            try :
+                stock ["arandelas"] = int(input())
+            except : 
+                print ("Error al ingresar el stock")
+        elif agregar == "fin" :
+            print ("El programa fue finalizado")
+            break
+        else :
+            print ("Error la ingresar el stock")
 
 
 if __name__ == '__main__':
